@@ -1,7 +1,16 @@
-spring:
+
+    spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/fornecedor
+    driver-class-name: org.postgresql.Driver
     username: postgres
     password: postgres
+    url: jdbc:postgresql://localhost/fornecedor
+    platform: postgres
+    initialization-mode: always
+    continue-on-error: true
   jpa:
-    ddl-auto: update 
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    database: postgresql
